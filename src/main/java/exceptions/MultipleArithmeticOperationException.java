@@ -1,6 +1,6 @@
 package exceptions;
 
-public class MultipleArithmeticOperationException extends RuntimeException{
+class MultipleArithmeticOperationException extends RuntimeException{
     public MultipleArithmeticOperationException(){
         super("The calculator performs only one operation at a time!");
     }
