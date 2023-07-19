@@ -1,4 +1,5 @@
 import calculator.ArabicCalculator;
+import calculator.RomanCalculator;
 import exceptions.NotAnArithmeticOperationException;
 import validator.StringValidator;
 
@@ -8,14 +9,18 @@ import java.io.InputStreamReader;
 
 
 public class Main {
-    private static final ArabicCalculator calculator = new ArabicCalculator();
+    private static final ArabicCalculator arabicCalculator = new ArabicCalculator();
+    private static final RomanCalculator romanCalculator = new RomanCalculator();
 
 
     public static String calc(String input) {
         String res = "";
         if (StringValidator.isValidArabicMathExpression(input)) {
-            res = calculator.calcArabic(input);
-        } else throw new NotAnArithmeticOperationException();
+            res = arabicCalculator.calcArabic(input);
+        }else  if (StringValidator.isValidRomanMathExpression(input)){
+            res = romanCalculator.calcRoman(input);
+        }
+        else throw new NotAnArithmeticOperationException();
         return res;
     }
 
