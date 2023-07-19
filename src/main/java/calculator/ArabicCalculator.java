@@ -1,13 +1,8 @@
 package calculator;
 
-import lombok.AllArgsConstructor;
-
-
-@AllArgsConstructor
-class ArabicCalculator {
+public class ArabicCalculator {
 
     public String calcArabic(String input) {
-        //TODO: import my Excepions and validator and add them as maven dependencies (ask Max if google doesn't help me)
         String[] split = input.split(" ");
         int i = Integer.parseInt(split[0]);
         int j = Integer.parseInt(split[2]);
@@ -18,7 +13,6 @@ class ArabicCalculator {
                 return String.valueOf(i + j);
             }
             case ("-") -> {
-                if (i - j < 0) throw new RuntimeException();
                 return String.valueOf(i - j);
             }
             case ("*") -> {
@@ -28,6 +22,6 @@ class ArabicCalculator {
                 return String.valueOf(i / j);
             }
         }
-     return "";
+        return "";
     }
 }
