@@ -2,7 +2,7 @@ package calculator;
 
 public class ArabicCalculator {
 
-    public String calcArabic(String input) {
+    String calcArabic(String input) {
         String[] split = input.split(" ");
         int i = Integer.parseInt(split[0]);
         int j = Integer.parseInt(split[2]);

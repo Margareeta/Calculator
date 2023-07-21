@@ -1,10 +1,8 @@
 package calculator;
 
-import exceptions.NegativeResultException;
-
 import java.util.Arrays;
 
-public class RomanCalculator {
+class RomanCalculator {
     private int[] convertRomanNumbersToIntw(String input) {
         int[] res = new int[2];
         String[] split = input.split(" ");
@@ -96,7 +94,7 @@ public class RomanCalculator {
             case "-" -> {
                 if (i - j > 0) {
                     res = i - j;
-                } else throw new NegativeResultException();
+                } else throw new IllegalArgumentException("There are no  zero and no roman numbers below zero!");
             }
             case "*" -> res = i * j;
             case "/" -> res = i / j;

@@ -10,7 +10,7 @@ I	лат. unus, unum
 100	C
  */
 @Getter
-public enum RomanDigits {
+enum RomanDigits {
     C(100),
     XC(90),
     L(50),

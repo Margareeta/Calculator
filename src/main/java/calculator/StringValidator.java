@@ -1,9 +1,9 @@
-package validator;
+package calculator;
 
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-public class StringValidator {
+class StringValidator {
     public static final String VALID_ARABIC_EXPRESSION = "\\d{1,2}\\s[+-/*]\\s\\d{1,2}";
     public static final String VALID_ROMAN_EXPRESSION = "[IVX]{1,4}\\s[-+*/]\\s[IVX]{1,4}";
     public static final String MIXED_EXPRESSION = "[0-9IVXLCDM]+";
