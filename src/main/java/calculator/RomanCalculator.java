@@ -3,79 +3,58 @@ package calculator;
 import java.util.Arrays;
 
 class RomanCalculator {
+    int parseRoman(String roman) {
+        int res = 0;
+        switch (roman) {
+            case "I":
+                res = 1;
+                break;
+            case "II":
+                res = 2;
+                break;
+            case "III":
+                res = 3;
+                break;
+            case "IV":
+                res = 4;
+                break;
+            case "V":
+                res = 5;
+                break;
+            case "VI":
+                res = 6;
+                break;
+            case "VII":
+                res = 7;
+                break;
+            case "VIII":
+                res = 8;
+            case "IX":
+                res = 9;
+                break;
+            case "X":
+                res = 10;
+                break;
+            default:
+                throw new IllegalArgumentException();
+        }
+        return res;
+    }
+
     private int[] convertRomanNumbersToIntw(String input) {
         int[] res = new int[2];
         String[] split = input.split(" ");
-        switch (split[0]) {
-            case "I":
-                res[0] = 1;
-                break;
-            case "II":
-                res[0] = 2;
-                break;
-            case "III":
-                res[0] = 3;
-                break;
-            case "IV":
-                res[0] = 4;
-                break;
-            case "V":
-                res[0] = 5;
-                break;
-            case "VI":
-                res[0] = 6;
-                break;
-            case "VII":
-                res[0] = 7;
-                break;
-            case "VIII":
-                res[0] = 8;
-            case "IX":
-                res[0] = 9;
-                break;
-            case "X":
-                res[0] = 10;
-                break;
-        }
-        switch (split[2]) {
-            case "I":
-                res[1] = 1;
-                break;
-            case "II":
-                res[1] = 2;
-                break;
-            case "III":
-                res[1] = 3;
-                break;
-            case "IV":
-                res[1] = 4;
-                break;
-            case "V":
-                res[1] = 5;
-                break;
-            case "VI":
-                res[1] = 6;
-                break;
-            case "VII":
-                res[1] = 7;
-                break;
-            case "VIII":
-                res[1] = 8;
-            case "IX":
-                res[1] = 9;
-                break;
-            case "X":
-                res[1] = 10;
-                break;
-        }
+        res[0] = parseRoman(split[0]);
+        res[1] = parseRoman(split[2]);
         return res;
+
     }
 
     private String convertIntegersToRoman(int number) {
         StringBuilder sb = new StringBuilder();
         for (RomanDigits value : RomanDigits.values()) {
             int val = value.getValue();
-            while (number  >=  val) {
+            while (number >= val) {
                 number -= val;
                 sb.append(value);
             }

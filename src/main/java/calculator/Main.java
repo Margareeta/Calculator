@@ -18,8 +18,6 @@ public class Main {
             res = romanCalculator.calcRoman(input);
         } else if (StringValidator.hasMultimpleCalculations(input)) {
             throw new IllegalArgumentException("The calculator performs only one operation at a time!");
-        } else if (StringValidator.hasArabicAndRomanNumbers(input)) {
-            throw new IllegalArgumentException("Arabic and Roman numbers do not come together!");
         } else throw new IllegalArgumentException("No math in this string, can't calculate!");
         return res;
     }
