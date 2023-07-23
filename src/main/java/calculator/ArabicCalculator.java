@@ -1,13 +1,16 @@
 package calculator;
 
 public class ArabicCalculator {
-    private int[] parseArabic(String input){
-        String[] split = input.split(" ");
+    private String[] numbersAndSign(String input) {
+        return input.split(" ");
+    }
+
+    private int[] parseArabic(String input) {
+        String[] numbersAndSign = numbersAndSign(input);
         int[] res = new int[2];
-        int i, j;
-        try {
-            i = Integer.parseInt(split[0]);
-            j = Integer.parseInt(split[2]);
+               try {
+            res[0] = Integer.parseInt(numbersAndSign[0]);
+            res[1] = Integer.parseInt(numbersAndSign[2]);
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException("Arabic and Roman numbers do not come together!");
         }
@@ -15,11 +18,12 @@ public class ArabicCalculator {
     }
 
     String calcArabic(String input) {
-        String[] split = input.split(" ");
+        int i, j;
+        String[] numbersAndSign = numbersAndSign(input);
         int[] parseArabic = parseArabic(input);
-        int i = parseArabic[0];
-        int j = parseArabic[1];
-        String sign = split[1];
+        i = parseArabic[0];
+        j = parseArabic[1];
+        String sign = numbersAndSign[1];
         switch (sign) {
             case ("+") -> {
                 return String.valueOf(i + j);
